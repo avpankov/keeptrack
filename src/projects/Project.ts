@@ -1,17 +1,28 @@
+interface IProject {
+  id: number | undefined;
+  name: string;
+  description: string;
+  imageUrl: string;
+  contractTypeId: number | undefined;
+  contractSignedOn: string;
+  budget: number;
+  isActive: boolean;
+}
+
 export class Project {
   id: number | undefined;
-  name: string = '';
-  description: string = '';
-  imageUrl: string = '';
+  name = '';
+  description = '';
+  imageUrl = '';
   contractTypeId: number | undefined;
   contractSignedOn: Date = new Date();
-  budget: number = 0;
-  isActive: boolean = false;
+  budget = 0;
+  isActive = false;
   get isNew(): boolean {
     return this.id === undefined;
   }
 
-  constructor(initializer?: any) {
+  constructor(initializer?: IProject) {
     if (!initializer) return;
     if (initializer.id) this.id = initializer.id;
     if (initializer.name) this.name = initializer.name;
