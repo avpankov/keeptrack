@@ -4,7 +4,7 @@ interface IProject {
   description: string;
   imageUrl: string;
   contractTypeId: number | undefined;
-  contractSignedOn: string;
+  contractSignedOn: string | Date;
   budget: number;
   isActive: boolean;
 }

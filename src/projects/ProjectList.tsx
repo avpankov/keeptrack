@@ -24,7 +24,11 @@ function ProjectList({ projects, onSave }: IProjectListProps) {
         return (
           <div className="cols-sm" key={project.id}>
             {project === projectBeingEdited ? (
-              <ProjectForm onSave={onSave} onCancel={cancelEditing} />
+              <ProjectForm
+                onSave={onSave}
+                onCancel={cancelEditing}
+                project={project}
+              />
             ) : (
               <ProjectCard project={project} onEdit={handleEdit} />
             )}
