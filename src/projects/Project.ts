@@ -1,4 +1,4 @@
-interface IProject {
+export interface IProject {
   id: number | undefined;
   name: string;
   description: string;
